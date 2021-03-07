@@ -9,7 +9,7 @@ Uses [go-colorable](https://github.com/mattn/go-colorable) so colors will work o
 
 ## Install
 
-**From pre-built release:** You can download a pre-built binary from [GitHub Releases](https://github.com/ravener/gopherdoc)
+**From pre-built release:** You can download a pre-built binary from [GitHub Releases](https://github.com/ravener/gopherdoc/releases)
 
 **From Homebrew:** `brew install ravener/tap/gopherdoc`
 
