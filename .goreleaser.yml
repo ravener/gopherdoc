@@ -1,0 +1,57 @@
+# This is an example .goreleaser.yml file with some sane defaults.
+# Make sure to check the documentation at http://goreleaser.com
+before:
+  hooks:
+    # You may remove this if you don't use go modules.
+    - go mod download
+    # you may remove this if you don't need go generate
+    # - go generate ./...
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    binary: gopherdoc
+    goarch:
+      - amd64
+      - 386
+      - arm64
+      - arm
+archives:
+  - replacements:
+      darwin: darwin
+      linux: linux
+      windows: windows
+      386: i386
+      amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - LICENSE
+      - README.md
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+brews:
+  -
+    name: gopherdoc
+    tap:
+      owner: ravener
+      name: homebrew-tap
+    commit_author:
+      name: "Raven Ravener"
+      email: "ravener.anime@gmail.com"
+    folder: Formula
+    homepage: "https://github.com/ravener/gopherdoc"
+    description: "Improved go doc with terminal syntax highlighting"
+    license: "MIT"
