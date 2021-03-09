@@ -8,17 +8,12 @@ This is a modification of the original `go doc` command that adds terminal synta
 Uses [go-colorable](https://github.com/mattn/go-colorable) so colors will work on Windows as well.
 
 ## Install
-
-**From pre-built release:** You can download a pre-built binary from [GitHub Releases](https://github.com/ravener/gopherdoc/releases)
-
-**From Homebrew:** `brew install ravener/tap/gopherdoc`
-
-**From Source:**
 ```sh
 $ git clone https://github.com/ravener/gopherdoc
 $ cd gopherdoc
 $ go install
 ```
+It will install into `$GOPATH/bin/gopherdoc` (Use `go env GOPATH` to find your path) hopefully that's probably in your `PATH` already.
 
 ## Usage
 Usage is the same as `go doc` with just a new flag available.
